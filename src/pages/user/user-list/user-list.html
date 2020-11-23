@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-navbar>
+      <ion-grid class="no-padding">
+          <ion-row>
+              <ion-col col-2>
+                  <!-- <div class="back-icon-img">
+                      <img src="assets/imgs/back-arrow.png">
+                  </div> -->
+              </ion-col>
+              <ion-col col-8>
+                  <h2 class="header-title-2">User List</h2>
+
+              </ion-col>
+              <ion-col col-2>
+                  <div class="menu-list-img">
+                    <ion-icon name="exit" (click)="logoutAlert()"></ion-icon>
+                  </div>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+  </ion-navbar>
+  <div class="search-box">
+    <ion-searchbar (click)="searchUser($event)"></ion-searchbar>
+
+ </div>
+</ion-header>
+
+<ion-content>
+
+
+  <div class="bg-blue">
+      <h3 class="title-bg-blue">Users</h3>
+  </div>
+
+
+
+  <div class="pad-page-10 mrg-t-65">
+      <ion-grid class="">
+          <ion-row *ngFor="let item of userlist">
+              <div class="new-box">
+                  <div class="new-img-box" (click)="userDetails(item.id)">
+                      <div class="img-box">
+                          <img [src]="url?.serverUrl + 'uploads/profile_images/' + item.profile_photo">
+                      </div>
+                      <!-- https://s3-sa-east-1.amazonaws.com/mybucket/cp${this.client.id}.jpg -->
+                      <div class="new-cuntent-box">
+                          <h3>{{item.firstname}}</h3>
+                          <div class="date-box"> </div>
+                      </div>
+                  </div>
+
+              </div>
+              <!---<div class="new-box">
+                  <div class="new-img-box">
+                      <div class="img-box">
+                          <img src="assets/imgs/new-img-1.jpg">
+                      </div>
+
+                      <div class="new-cuntent-box">
+                          <h3>User Name</h3>
+                          <div class="date-box"> </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="new-box">
+                  <div class="new-img-box">
+                      <div class="img-box">
+                          <img src="assets/imgs/new-img-1.jpg">
+                      </div>
+
+                      <div class="new-cuntent-box">
+                          <h3>User Name</h3>
+                          <div class="date-box"> </div>
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="new-box">
+                  <div class="new-img-box">
+                      <div class="img-box">
+                          <img src="assets/imgs/new-img-1.jpg">
+                      </div>
+
+                      <div class="new-cuntent-box">
+                          <h3>User Name</h3>
+                          <div class="date-box"> </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="new-box">
+                  <div class="new-img-box">
+                      <div class="img-box">
+                          <img src="assets/imgs/new-img-1.jpg">
+                      </div>
+
+                      <div class="new-cuntent-box">
+                          <h3>User Name</h3>
+                          <div class="date-box"> </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="new-box">
+                  <div class="new-img-box">
+                      <div class="img-box">
+                          <img src="assets/imgs/new-img-1.jpg">
+                      </div>
+
+                      <div class="new-cuntent-box">
+                          <h3>User Name</h3>
+                          <div class="date-box"> </div>
+                      </div>
+                  </div>
+
+              </div>-->
+          </ion-row>
+      </ion-grid>
+
+
+  </div>
+
+
+
+
+</ion-content>
